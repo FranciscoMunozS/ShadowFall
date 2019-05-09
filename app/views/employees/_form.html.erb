@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+    <%= simple_form_for(@employee) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :name, label: 'Nombre Completo' %>
+        <%= f.input :rut, label: 'RUT' %>
+        <%= f.input :profession, label: 'Profesión' %>
+        <%= f.input :charge, label: 'Cargo' %>
+        <%= f.input :amount, label: 'Monto Contratado del Profesional' %>
+        <%= f.input :technical_unit, label: 'Unidad Tecnica' %>
+        <%= f.input :fiscal_inspector, label: 'Inspector Fiscal' %>
+      </div>
+  </div>
+  <div class="card-footer">
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+  </div>
+</div>

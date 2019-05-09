@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rut: MyString
+  profession: MyString
+  charge: MyString
+  amount: MyString
+  technical_unit: MyString
+  fiscal_inspector: MyString
+
+two:
+  name: MyString
+  rut: MyString
+  profession: MyString
+  charge: MyString
+  amount: MyString
+  technical_unit: MyString
+  fiscal_inspector: MyString

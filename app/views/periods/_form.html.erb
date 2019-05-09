@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <%= simple_form_for(@period) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <%= f.association :employee, label: 'Empleado', include_blank: false %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :start_date, label: 'Inicio', input_html: { class: 'datepicker' } %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
+          </div>
+        </div>      
+        <%= f.input :resolution, label: 'Resolución' %>
+        <%= f.input :working_day, label: 'Jornada' %>
+        <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
+  </div>
+    <div class="card-footer">
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    </div>
+</div>

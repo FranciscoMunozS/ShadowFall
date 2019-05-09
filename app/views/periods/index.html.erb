@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6"><h3>Periodo Prestación</h3></div>
+  <div class="col-md-6 text-right"><%= link_to 'Ingresar Nuevo Periodo Prestación', new_period_path, class: 'btn btn-primary' %></div>
+</div>
+
+<hr>
+<table class="responsive nowrap table table-bordered" id="dttb-periods" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="start_date">Inicio</th>
+      <th data-data="end_date">Termino</th>
+      <th data-data="resolution">Resolución</th>
+      <th data-data="working_day">Jornada</th>
+      <th data-data="quantity">Cantidad Dias</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>

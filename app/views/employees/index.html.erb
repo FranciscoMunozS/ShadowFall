@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>AITOs</h3>
+  </div>
+  <div class="col-md-6 text-right">
+    <%= link_to 'Ingresar Nuevo Registro', new_employee_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<hr>
+<table class="table table-bordered" id="dttb">
+  <thead>
+    <tr>
+      <th>Nombre Completo</th>
+      <th>Unidad Tecnica</th>
+      <th>Inspector Fiscal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.technical_unit %></td>
+        <td><%= employee.fiscal_inspector %></td>
+        <td><%= link_to 'Ver', employee %></td>
+        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
