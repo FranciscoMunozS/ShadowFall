@@ -18,6 +18,7 @@ gem 'jquery-datatables', '~> 1.10', '>= 1.10.19.1'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 gem 'bootstrap-datepicker-rails', '~> 1.8', '>= 1.8.0.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
