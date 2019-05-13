@@ -10,26 +10,28 @@
 </div>
 <hr>
 <table class="table table-bordered" id="dttb">
-  <thead>
+  <thead class="text-center">
     <tr>
       <th>Nombre Completo</th>
       <th>Unidad Tecnica</th>
       <th>Inspector Fiscal</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Opciones</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text-center">
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.name %></td>
         <td><%= employee.technical_unit %></td>
         <td><%= employee.fiscal_inspector %></td>
-        <td><%= link_to 'Ver', employee %></td>
-        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'Ver', employee, class: 'btn btn-primary' %>
+            <%= link_to 'Editar', edit_employee_path(employee), class: 'btn btn-primary' %>
+            <%= link_to 'Eliminar', employee, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

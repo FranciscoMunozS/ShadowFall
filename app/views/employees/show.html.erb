@@ -1,39 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
-
-<p>
-  <strong>Rut:</strong>
-  <%= @employee.rut %>
-</p>
-
-<p>
-  <strong>Profession:</strong>
-  <%= @employee.profession %>
-</p>
-
-<p>
-  <strong>Charge:</strong>
-  <%= @employee.charge %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @employee.amount %>
-</p>
-
-<p>
-  <strong>Technical unit:</strong>
-  <%= @employee.technical_unit %>
-</p>
-
-<p>
-  <strong>Fiscal inspector:</strong>
-  <%= @employee.fiscal_inspector %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<div class="card">
+  <div class="card-body">
+    <p><strong>Nombre:</strong></p>
+    <p><%= @employee.name %></p>
+    <hr>
+    <p><strong>RUT:</strong></p>
+    <p><%= @employee.rut %></p>
+    <hr>
+    <p><strong>Profesión:</strong></p>
+    <p><%= @employee.profession %></p>
+    <hr>
+    <p><strong>Cargo:</strong></p>
+    <p><%= @employee.charge %></p>
+    <hr>
+    <p><strong>Monto Contratado del Profesional:</strong></p>
+    <p><%= @employee.amount %></p>
+    <hr>
+    <p><strong>Unidad Tecnica:</strong></p>
+    <p><%= @employee.technical_unit %></p>
+    <hr>
+    <p><strong>Inspector Fiscal</strong></p>
+    <p><%= @employee.fiscal_inspector %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar registro', edit_employee_path(@employee), class: 'btn btn-success' %>
+    <%= link_to 'Cancelar', employees_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

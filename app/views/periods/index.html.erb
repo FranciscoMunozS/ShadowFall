@@ -1,23 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-md-6"><h3>Periodo Prestación</h3></div>
-  <div class="col-md-6 text-right"><%= link_to 'Ingresar Nuevo Periodo Prestación', new_period_path, class: 'btn btn-primary' %></div>
+  <div class="col-md-6">
+    <h3>Periodo Prestación</h3>
+  </div>
+  <div class="col-md-6 text-right">
+    <%= link_to 'Ingresar Nuevo Periodo Prestación', new_period_path, class: 'btn btn-primary' %>
+  </div>
 </div>
-
 <hr>
-<table class="responsive nowrap table table-bordered" id="dttb-periods" data-sort="true" data-source="<%= url_for(format: :json)%>">
+<table class="table table-bordered" id="dttb">
   <thead>
     <tr>
-      <th data-data="start_date">Inicio</th>
-      <th data-data="end_date">Termino</th>
-      <th data-data="resolution">Resolución</th>
-      <th data-data="working_day">Jornada</th>
-      <th data-data="quantity">Cantidad Dias</th>
-      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+      <th class="text-center">Inicio</th>
+      <th class="text-center">Termino</th>
+      <th class="text-center">Resolución</th>
+      <th class="text-center">Jornada</th>
+      <th class="text-center">Cantidad Días</th>
+      <th class="text-center">Opciones</th>
     </tr>
   </thead>
 
+  <tbody>
+    <% @periods.each do |period| %>
+      <tr>
+        <td class="text-center"><%= period.start_date %></td>
+        <td class="text-center"><%= period.end_date %></td>
+        <td class="text-center"><%= period.resolution %></td>
+        <td class="text-center"><%= period.working_day %></td>
+        <td class="text-center"><%= period.quantity %></td>
+        <td class="text-center">
+          <div class="btn-group">
+            <%= link_to 'Ver', period, class: 'btn btn-primary' %>
+            <%= link_to 'Editar', edit_period_path(period), class: 'btn btn-primary' %>
+            <%= link_to 'Eliminar', period, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-primary' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br>

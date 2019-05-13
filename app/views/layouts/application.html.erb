@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= render 'assets/nav' %>
+    <% if user_signed_in? %>
+      <%= render 'assets/nav' %>
+    <% end %>
     <br>
     <div class="container">
       <%= yield %>

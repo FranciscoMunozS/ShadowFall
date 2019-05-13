@@ -12,15 +12,13 @@
           <div class="col-md-6">
             <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
           </div>
-        </div>      
+        </div>
         <%= f.input :resolution, label: 'Resolución' %>
         <%= f.input :working_day, label: 'Jornada' %>
         <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
   </div>
     <div class="card-footer">
-      <div class="form-actions">
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      </div>
+      <%= f.button :submit, 'Ingresar registro', class: 'btn btn-primary' %>
     <% end %>
-    </div>
+  </div>
 </div>

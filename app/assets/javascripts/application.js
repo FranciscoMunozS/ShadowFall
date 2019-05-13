@@ -17,11 +17,10 @@
 //= require bootstrap-datepicker
 //= require select2
 //= require activestorage
-//= require turbolinks
 //= require datatables
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $("#dttb").dataTable({
     language: {
         url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
@@ -29,11 +28,11 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.datepicker').datepicker();
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $("#period_employee_id").select2({
     theme: "bootstrap"
   });
