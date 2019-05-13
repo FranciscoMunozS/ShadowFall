@@ -30,6 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    submit:
+      employee:
+        create: 'Crear Registro'
+        update: 'Actualizar Registro'
+      period:
+        create: 'Crear Registro'
+        update: 'Actualizar Registro'
   activerecord:
     errors:
       messages:
