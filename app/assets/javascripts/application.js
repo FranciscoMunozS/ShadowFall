@@ -29,7 +29,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    language: "es",
+    startDate: "today",
+  });
 });
 
 $(document).ready(function(){

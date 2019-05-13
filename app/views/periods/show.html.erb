@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
+<div class="card">
+  <h2 class="card-header">Periodo Prestación</h2>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @period.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @period.end_date %>
-</p>
-
-<p>
-  <strong>Resolution:</strong>
-  <%= @period.resolution %>
-</p>
-
-<p>
-  <strong>Working day:</strong>
-  <%= @period.working_day %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @period.quantity %>
-</p>
-
-<%= link_to 'Edit', edit_period_path(@period) %> |
-<%= link_to 'Back', periods_path %>
+  <div class="card-body">
+    <p><strong>Empleado:</strong></p>
+    <p><%= @period.employee.name %></p>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Fecha inicio:</strong></p>
+        <p><%= @period.start_date %></p>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Fecha termino:</strong></p>
+        <p><%= @period.end_date %></p>
+      </div>
+    </div>
+    <hr>
+    <p><strong>Resolución:</strong></p>
+    <p><%= @period.resolution %></p>
+    <hr>
+    <p><strong>Jornada:</strong></p>
+    <p><%= @period.working_day %></p>
+    <hr>
+    <p><strong>Cantidad días:</strong></p>
+    <p><%= @period.quantity %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar registro', edit_period_path(@period), class: 'btn btn-success' %>
+    <%= link_to 'Cancelar', periods_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
