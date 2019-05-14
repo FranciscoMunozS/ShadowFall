@@ -13,6 +13,17 @@
             <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
           </div>
         </div>
+        <h3>Permanencia</h3>
+        <hr>
+        <div id="permanences">
+          <%= f.simple_fields_for :permanences do |permanence| %>
+            <%= render 'permanence_fields', f: permanence %>
+          <% end %>
+            <div class="links">
+              <%= link_to_add_association 'Agregar permanencia', f, :permanences, class: 'btn btn-primary' %>
+            </div>
+        </div>
+        <hr>
         <%= f.input :resolution, label: 'Resolución' %>
         <%= f.input :working_day, label: 'Jornada' %>
         <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>

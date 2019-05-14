@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery3
 //= require popper
+//= require cocoon
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require select2
@@ -48,12 +49,12 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-  $('.datepicker').datepicker({
-    format: "dd/mm/yyyy",
-    language: "es",
-    startDate: "today",
+  $('.datepicker').datepicker();
+  $('#datepicker').on('cocoon:after-insert', function(e, insertedItem) {
+    insertedItem.find('.datepicker').datepicker();
   });
 });
+
 
 $(document).ready(function(){
   $("#period_employee_id").select2({

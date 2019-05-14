@@ -70,6 +70,6 @@ class PeriodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def period_params
-      params.require(:period).permit(:start_date, :end_date, :resolution, :working_day, :quantity, :employee_id)
+      params.require(:period).permit(:start_date, :end_date, :resolution, :working_day, :quantity, :employee_id, permanences_attributes: [:id, :name, :description, :end_date, :resolution, :_destroy])
     end
 end
