@@ -12,6 +12,7 @@
 <table class="table table-bordered text-center" id="dttb">
   <thead>
     <tr>
+      <th>RUT</th>
       <th>Nombre Completo</th>
       <th>Unidad Tecnica</th>
       <th>Inspector Fiscal</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
+        <td><%= employee.rut %></td>
         <td><%= employee.name %></td>
         <td><%= employee.technical_unit %></td>
         <td><%= employee.fiscal_inspector %></td>

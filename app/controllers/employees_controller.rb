@@ -43,7 +43,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to @employee, flash: {sucess: 'Employee was successfully updated.'} }
+        format.html { redirect_to @employee, flash: {success: 'Empleado actualizado correctamente.'} }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee.destroy
     respond_to do |format|
-      format.html { redirect_to employees_url, flash: {error:'Employee was successfully destroyed.'} }
+      format.html { redirect_to employees_url, flash: {error:'Registro eliminado correctamente.'} }
       format.json { head :no_content }
     end
   end
