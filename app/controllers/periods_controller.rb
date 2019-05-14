@@ -29,7 +29,7 @@ class PeriodsController < ApplicationController
 
     respond_to do |format|
       if @period.save
-        format.html { redirect_to @period, notice: 'Period was successfully created.' }
+        format.html { redirect_to @period, flash: {success:'Periodo creado correctamente.'} }
         format.json { render :show, status: :created, location: @period }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PeriodsController < ApplicationController
   def update
     respond_to do |format|
       if @period.update(period_params)
-        format.html { redirect_to @period, notice: 'Period was successfully updated.' }
+        format.html { redirect_to @period, flash: {success:'Periodo actualizado correctamente.'} }
         format.json { render :show, status: :ok, location: @period }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class PeriodsController < ApplicationController
   def destroy
     @period.destroy
     respond_to do |format|
-      format.html { redirect_to periods_url, notice: 'Period was successfully destroyed.' }
+      format.html { redirect_to periods_url, flash: {error:'Period was successfully destroyed.'} }
       format.json { head :no_content }
     end
   end
