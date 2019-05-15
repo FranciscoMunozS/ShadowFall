@@ -13,6 +13,10 @@
             <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
           </div>
         </div>
+        <%= f.input :resolution, label: 'Resolución' %>
+        <%= f.input :working_day, label: 'Jornada' %>
+        <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
+
         <h3>Modificación</h3>
         <hr>
         <div id="permanences">
@@ -26,9 +30,6 @@
             </div>
         </div>
         <hr>
-        <%= f.input :resolution, label: 'Resolución' %>
-        <%= f.input :working_day, label: 'Jornada' %>
-        <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
   </div>
     <div class="card-footer">
       <%= f.button :submit, class: 'btn btn-primary' %>
