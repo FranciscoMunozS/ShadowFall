@@ -25,35 +25,24 @@
     <hr>
     <p><strong>Cantidad días:</strong></p>
     <p><%= @period.quantity %></p>
-    <h3>Permanencia</h3>
+    <h3>Modificaciones</h3>
     <hr>
     <% @period.permanences.each do |permanence| %>
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col-md-4">
-              <p><strong>Nombre permanencia: </strong></p>
-              <p><%= permanence.name %></p>
-            </div>
-            <div class="col-md-4">
-              <p><strong>Resolución permanencia: </strong></p>
+            <div class="col-md-6">
+              <p><strong>Resolución: </strong></p>
               <p><%= permanence.resolution %></p>
             </div>
-            <div class="col-md-4">
-              <p><strong>Fecha termino permanencia: </strong></p>
+            <div class="col-md-6">
+              <p><strong>Fecha termino: </strong></p>
               <p><%= permanence.end_date %></p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-md-12">
-              <p><strong>Descripción permanencia: </strong></p>
-              <p><%= permanence.description %></p>
             </div>
           </div>
         </div>
       </div>
-      <br> 
+      <br>
     <% end %>
   </div>
   <div class="card-footer">

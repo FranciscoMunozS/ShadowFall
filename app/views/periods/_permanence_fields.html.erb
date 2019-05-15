@@ -2,19 +2,11 @@
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-4">
-          <%= f.input :name, label: 'Nombre' %>
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <%= f.input :resolution, label: 'Resolución' %>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <%= f.input :end_date, as: :string, label: 'Fecha termino', input_html: { class: 'datepicker' } %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <%= f.input :description, as: :text, label: 'Descripción' %>
         </div>
       </div>
     </div>

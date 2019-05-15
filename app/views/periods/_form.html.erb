@@ -13,7 +13,7 @@
             <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
           </div>
         </div>
-        <h3>Permanencia</h3>
+        <h3>Modificación</h3>
         <hr>
         <div id="permanences">
           <%= f.simple_fields_for :permanences do |permanence| %>
@@ -21,7 +21,7 @@
           <% end %>
             <div class="links">
               <%= link_to_add_association f, :permanences, class: 'btn btn-primary' do %>
-                <% icon('fas', 'plus-square', 'Agregar permanencia') %>
+                <% icon('fas', 'plus-square', 'Agregar modificación') %>
               <% end %>
             </div>
         </div>
