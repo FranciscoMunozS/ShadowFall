@@ -14,6 +14,7 @@
 //= require jquery3
 //= require popper
 //= require cocoon
+//= require custom
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require select2
@@ -21,50 +22,3 @@
 //= require datatables
 //= require toastr
 //= require_tree .
-
-$(document).ready(function(){
-  toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "positionClass": "toast-top-right",
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-  }
-});
-
-
-$(document).ready(function() {
-  $("#dttb").dataTable({
-    language: {
-        url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
-    }
-  });
-});
-
-$(document).ready(function(){
-  $('.datepicker').datepicker({
-    format: "dd/mm/yyyy",
-    language: "es",
-    startDate: "today",
-  });
-  $('#permanences').on('cocoon:after-insert', function(e, insertedItem) {
-    $('.datepicker').datepicker({
-      format: "dd/mm/yyyy",
-      language: "es",
-      startDate: "today",
-    });
-  });
-});
-
-$(document).ready(function(){
-  $("#period_employee_id").select2({
-    theme: "bootstrap"
-  });
-});

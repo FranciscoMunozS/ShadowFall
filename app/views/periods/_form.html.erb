@@ -20,7 +20,9 @@
             <%= render 'permanence_fields', f: permanence %>
           <% end %>
             <div class="links">
-              <%= link_to_add_association 'Agregar permanencia', f, :permanences, class: 'btn btn-primary' %>
+              <%= link_to_add_association f, :permanences, class: 'btn btn-primary' do %>
+                <% icon('fas', 'plus-square', 'Agregar permanencia') %>
+              <% end %>
             </div>
         </div>
         <hr>
