@@ -49,12 +49,19 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-  $('.datepicker').datepicker();
-  $('#datepicker').on('cocoon:after-insert', function(e, insertedItem) {
-    insertedItem.find('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    language: "es",
+    startDate: "today",
+  });
+  $('#permanences').on('cocoon:after-insert', function(e, insertedItem) {
+    $('.datepicker').datepicker({
+      format: "dd/mm/yyyy",
+      language: "es",
+      startDate: "today",
+    });
   });
 });
-
 
 $(document).ready(function(){
   $("#period_employee_id").select2({

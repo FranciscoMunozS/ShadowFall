@@ -1,4 +1,4 @@
-<div class="nested-fields">
+<div class="nested-fields" id="nested-field">
   <div class="card">
     <div class="card-body">
       <div class="row">
@@ -9,7 +9,7 @@
           <%= f.input :resolution, label: 'Resolución' %>
         </div>
         <div class="col-md-4">
-          <%= f.input :end_date, as: :string, label: 'Fecha termino', input_html: { class: 'datepicker', id: 'nested_datepicker' } %>
+          <%= f.input :end_date, as: :string, label: 'Fecha termino', input_html: { class: 'datepicker' } %>
         </div>
       </div>
       <div class="row">
