@@ -24,7 +24,7 @@
 
 @import "datatables";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 @import "font-awesome-sprockets";
 
@@ -32,26 +32,4 @@
 
 @import "toastr";
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  padding-bottom: 40px;
-}
-
-#login {
-  max-width: 400px;
-  margin: auto;
-  width: 50%;
-}
-
-.btn {
-  font-size: 15px;
-}
-
-p {
-  font-size: 16px;
-}
-
-.select2 {
-  width:100%!important;
-}
+@import "admin";

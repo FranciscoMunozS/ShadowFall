@@ -1,44 +1,51 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-md-6">
-    <h3>AITOs</h3>
-  </div>
-  <div class="col-md-6 text-right">
-    <%= link_to 'Ingresar Nuevo Registro', new_employee_path, class: 'btn btn-primary' %>
+  <div class="col-md-6 text-left">
+    <%= link_to 'Ingresar nuevo profesional', new_employee_path, class: 'btn btn-success btn-sm' %>
   </div>
 </div>
-<hr>
-<table class="table table-bordered text-center" id="dttb">
-  <thead>
-    <tr>
-      <th>RUT</th>
-      <th>Nombre Completo</th>
-      <th>Unidad Tecnica</th>
-      <th>Inspector Fiscal</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.rut %></td>
-        <td><%= employee.name %></td>
-        <td><%= employee.technical_unit %></td>
-        <td><%= employee.fiscal_inspector %></td>
-        <td>
-          <%= link_to employee, class: 'btn btn-primary' do %>
-            <% icon('fas', 'eye') %>
-          <% end %>
-          <%= link_to edit_employee_path(employee), class: 'btn btn-success' do %>
-            <% icon('fas', 'edit') %>
-          <% end %>
-          <%= link_to employee, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger' do %>
-            <% icon('fas', 'trash-alt') %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br>
+
+<div class="card shadow mb-4 border-left-success">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-success">
+    Profesionales
+  </div>
+  
+  <div class="card-body">
+    <table class="table table-bordered text-center" id="dttb">
+      <thead>
+        <tr>
+          <th>RUT</th>
+          <th>Nombre Completo</th>
+          <th>Unidad Tecnica</th>
+          <th>Inspector Fiscal</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.rut %></td>
+            <td><%= employee.name %></td>
+            <td><%= employee.technical_unit %></td>
+            <td><%= employee.fiscal_inspector %></td>
+            <td>
+              <%= link_to employee, class: 'btn btn-primary btn-sm' do %>
+                <% icon('fas', 'eye') %>
+              <% end %>
+              <%= link_to edit_employee_path(employee), class: 'btn btn-success btn-sm' do %>
+                <% icon('fas', 'edit') %>
+              <% end %>
+              <%= link_to employee, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger btn-sm' do %>
+                <% icon('fas', 'trash-alt') %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

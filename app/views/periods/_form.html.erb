@@ -1,39 +1,35 @@
-<div class="card">
-  <div class="card-body">
-    <%= simple_form_for(@period) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for(@period) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <%= f.association :employee, label: 'Empleado', include_blank: false %>
-        <div class="row">
-          <div class="col-md-6">
-            <%= f.input :start_date, label: 'Inicio', input_html: { class: 'datepicker' } %>
-          </div>
-          <div class="col-md-6">
-            <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
-          </div>
-        </div>
-        <%= f.input :resolution, label: 'Resolución' %>
-        <%= f.input :working_day, label: 'Jornada' %>
-        <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
+    <%= f.association :employee, label: 'Empleado', include_blank: false %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :start_date, label: 'Inicio', input_html: { class: 'datepicker' } %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
+      </div>
+    </div>
+    <%= f.input :resolution, label: 'Resolución' %>
+    <%= f.input :working_day, label: 'Jornada' %>
+    <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
 
-        <h3>Modificación</h3>
-        <hr>
+    <div class="card shadow mb-4 border-left-success">
+      <div class="card-header"><h6 class="m-0 font-weight-bold text-success">Modificación</h6></div>
+      <div class="card-body">
         <div id="permanences">
           <%= f.simple_fields_for :permanences do |permanence| %>
             <%= render 'permanence_fields', f: permanence %>
           <% end %>
             <div class="links">
-              <%= link_to_add_association f, :permanences, class: 'btn btn-primary' do %>
+              <%= link_to_add_association f, :permanences, class: 'btn btn-success btn-sm' do %>
                 <% icon('fas', 'plus-square', 'Agregar modificación') %>
               <% end %>
             </div>
         </div>
-        <hr>
-  </div>
-    <div class="card-footer">
-      <%= f.button :submit, class: 'btn btn-primary' %>
-      <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
-</div>
+      </div>
+    </div>
+  <%= f.button :submit, class: 'btn btn-primary btn-sm' %>
+  <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary btn-sm' %>
+<% end %>

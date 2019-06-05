@@ -9,22 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% unless flash.empty? %>
-      <script type="text/javascript">
-          <% flash.each do |f| %>
-          <% type = f[0].to_s %>
-          toastr['<%= type %>']('<%= f[1] %>');
-          <% end %>
-      </script>
-    <% end %>
-
+  <body class="bg-gradient-primary">
     <% if user_signed_in? %>
-      <%= render 'assets/nav' %>
+      <body id="page-top">
+      <div id="wrapper">
     <% end %>
-    <br>
-    <div class="container">
-      <%= yield %>
+      <% unless flash.empty? %>
+        <script type="text/javascript">
+            <% flash.each do |f| %>
+            <% type = f[0].to_s %>
+            toastr['<%= type %>']('<%= f[1] %>');
+            <% end %>
+        </script>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= render 'assets/sidebar' %>
+      <% end %>
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <% if user_signed_in? %>
+            <%= render 'assets/nav' %>
+          <% end %>
+          <div class="container-fluid">
+            <%= yield %>
+            <a class="scroll-to-top rounded" href="#page-top">
+              <i class="fas fa-angle-up"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
