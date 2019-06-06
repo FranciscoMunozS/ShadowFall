@@ -12,9 +12,14 @@
       </div>
     </div>
     <%= f.input :resolution, label: 'Resolución' %>
-    <%= f.input :working_day, label: 'Jornada' %>
-    <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
-
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :working_day, label: 'Jornada' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :quantity, label: 'Cantidad de Dias a la Semana' %>
+      </div>
+    </div>
     <div class="card shadow mb-4 border-left-success">
       <div class="card-header"><h6 class="m-0 font-weight-bold text-success">Modificación</h6></div>
       <div class="card-body">

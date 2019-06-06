@@ -1,0 +1,2 @@
+class Analist < ApplicationRecord
+end

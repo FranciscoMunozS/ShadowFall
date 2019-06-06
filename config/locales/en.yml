@@ -1,12 +1,4 @@
 en:
-  helpers:
-    submit:
-      employee:
-        create: 'Crear Registro'
-        update: 'Actualizar Registro'
-      period:
-        create: 'Crear Registro'
-        update: 'Actualizar Registro'
   activerecord:
     errors:
       messages:
@@ -222,11 +214,12 @@ en:
       long: "%A %d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm
+
   helpers:
     submit:
       employee:
-        create: 'Crear Registro'
-        update: 'Actualizar Registro'
+        create: 'Agregar profesional'
+        update: 'Actualizar datos profesional'
       period:
-        create: 'Crear Registro'
-        update: 'Actualizar Registro'
+        create: 'Crear periodo de prestación'
+        update: 'Actualizar periodo de prestación'

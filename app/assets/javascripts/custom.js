@@ -15,6 +15,10 @@ $(document).ready(function(){
   }
 });
 
+$(document).ready(function(){
+  $("#rut").Rut();
+});
+
 $(document).ready(function() {
   $("#dttb").dataTable({
     language: {
@@ -39,8 +43,7 @@ $(document).ready(function() {
 $(document).ready(function(){
   $('.datepicker').datepicker({
     format: "dd/mm/yyyy",
-    language: "es",
-    startDate: "today",
+    language: "es"
   });
   $('#permanences').on('cocoon:after-insert', function(e, insertedItem) {
     $('.datepicker').datepicker({
@@ -53,7 +56,8 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#period_employee_id").select2({
-    theme: "bootstrap"
+    theme: "bootstrap",
+    language: "es"
   });
 });
 

@@ -3,7 +3,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <%= f.input :resolution, label: 'Resolución' %>
+          <%= f.input :resolution, label: 'Resolución modificación' %>
         </div>
         <div class="col-md-6">
           <%= f.input :end_date, as: :string, label: 'Fecha termino', input_html: { class: 'datepicker' } %>
@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class="card-footer">
-      <%= link_to_remove_association f, class: 'btn btn-danger' do %>
-        <% icon('fas', 'trash-alt') %>
+      <%= link_to_remove_association f, class: 'btn btn-danger btn-sm' do %>
+        <% icon('fas', 'trash-alt', 'Quitar modificación') %>
       <% end %>
     </div>
   </div>
+  <br>
 </div>
-<br>

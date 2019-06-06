@@ -1,24 +1,30 @@
-<div class="card">
-  <div class="card-body">
-    <%= simple_form_for(@employee) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="form-inputs">
-        <%= f.input :name, label: 'Nombre Completo' %>
-        <%= f.input :rut, label: 'RUT' %>
-        <%= f.input :profession, label: 'Profesión' %>
-        <%= f.input :charge, label: 'Cargo' %>
-        <%= f.input :amount, label: 'Monto Contratado del Profesional' %>
-        <%= f.input :technical_unit, label: 'Unidad Tecnica' %>
-        <%= f.input :fiscal_inspector, label: 'Inspector Fiscal' %>
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :rut, label: 'RUT', input_html: { id: 'rut' } %>
       </div>
-  </div>
-  <div class="card-footer">
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-primary' %>
-      <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary' %>
+      <div class="col-md-6">
+        <%= f.input :name, label: 'Nombre Completo' %>
+      </div>
     </div>
-  <% end %>
+    <%= f.input :amount, label: 'Monto Contratado del Profesional' %>
+    <%= f.input :technical_unit, label: 'Unidad Tecnica' %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :profession, label: 'Profesión' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :charge, label: 'Cargo' %>
+      </div>
+    </div>
+    <%= f.input :fiscal_inspector, label: 'Inspector Fiscal' %>
   </div>
-</div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
+    <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary btn-sm' %>
+  </div>
+<% end %>

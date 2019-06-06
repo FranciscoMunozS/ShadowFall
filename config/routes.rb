@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :companies
+  resources :projects
+  resources :analists
   get 'dashboard/index'
   devise_for :users
   resources :periods

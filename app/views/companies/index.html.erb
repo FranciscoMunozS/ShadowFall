@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6 text-left">
+    <%= link_to 'Ingresar nueva empresa', new_company_path, class: 'btn btn-info btn-sm' %>
+  </div>
+</div>
+
+<br>
+
+<div class="card shadow mb-4 border-left-info">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-info">
+    Empresas
+  </div>
+
+  <div class="card-body">
+    <table class="table table-bordered text-center" id="dttb">
+      <thead>
+        <tr>
+          <th>Nombre empresa</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @companies.each do |company| %>
+          <tr>
+            <td><%= company.name %></td>
+            <td>
+              <%= link_to company, class: 'btn btn-primary btn-sm' do %>
+                <% icon('fas', 'eye') %>
+              <% end %>
+              <%= link_to edit_company_path(company), class: 'btn btn-success btn-sm' do %>
+                <% icon('fas', 'edit') %>
+              <% end %>
+              <%= link_to company, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger btn-sm' do %>
+                <% icon('fas', 'trash-alt') %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

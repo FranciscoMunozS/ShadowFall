@@ -15,10 +15,14 @@
 //= require popper
 //= require cocoon
 //= require custom
+//= require formater
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require select2
+//= require select2_locale_es
 //= require activestorage
 //= require datatables
 //= require toastr
+//= require inputmask
+//= require jquery.inputmask
 //= require_tree .

@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<div class="card">
-  <h2 class="card-header">Datos trabajador</h2>
+<div class="card shadow mb-4 border-left-primary">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-primary">
+    Datos trabajador
+  </div>
   <div class="card-body">
-    <p><strong>Nombre:</strong></p>
-    <p><%= @employee.name %></p>
-    <hr>
-    <p><strong>RUT:</strong></p>
-    <p><%= @employee.rut %></p>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>RUT:</strong></p>
+        <p><%= @employee.rut %></p>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Nombre:</strong></p>
+        <p><%= @employee.name %></p>
+      </div>
+    </div>
     <hr>
     <p><strong>Profesión:</strong></p>
     <p><%= @employee.profession %></p>
@@ -25,7 +32,7 @@
     <p><%= @employee.fiscal_inspector %></p>
   </div>
   <div class="card-footer">
-    <%= link_to 'Editar registro', edit_employee_path(@employee), class: 'btn btn-success' %>
+    <%= link_to 'Editar registro', edit_employee_path(@employee), class: 'btn btn-primary' %>
     <%= link_to 'Cancelar', employees_path, class: 'btn btn-secondary' %>
   </div>
 </div>
