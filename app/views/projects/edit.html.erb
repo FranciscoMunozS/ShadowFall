@@ -1,6 +1,8 @@
-<h1>Editing Project</h1>
-
-<%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<div class="card shadow mb-4 border-left-danger">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-danger">Editar proyecto</h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form', project: @project %>
+  </div>
+</div>

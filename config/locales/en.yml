@@ -223,3 +223,12 @@ en:
       period:
         create: 'Crear contrato'
         update: 'Actualizar contrato'
+      company:
+        create: 'Crear compañia'
+        update: 'Actualizar compañia'
+      analist:
+        create: 'Crear analista'
+        update: 'Actualizar analista'
+      project:
+        create: 'Crear proyecto'
+        update: 'Actualizar proyecto'

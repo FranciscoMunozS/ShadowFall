@@ -1,18 +1,51 @@
-<h1>Projects</h1>
+<p id="notice"><%= notice %></p>
 
-<table class="responsive nowrap table table-hover" id="dttb-projects" data-sort="true" data-source="<%= url_for(format: :json)%>">
-  <thead>
-    <tr>
-      <th data-data="name">Name</th>
-      <th data-data="ubication">Ubication</th>
-      <th data-data="bip">Bip</th>
-      <th data-data="description">Description</th>
-      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
-    </tr>
-  </thead>
-
-</table>
+<div class="row">
+  <div class="col-md-6 text-left">
+    <%= link_to 'Ingresar nuevo proyecto', new_project_path, class: 'btn btn-danger btn-sm' %>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<div class="card shadow mb-4 border-left-danger">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-danger">
+    Proyectos
+  </div>
+
+  <div class="card-body">
+    <table class="table table-bordered text-center" id="dttb">
+      <thead>
+        <tr>
+          <th>BIP</th>
+          <th>Nombre proyecto</th>
+          <th>Comuna</th>
+          <th>Etapa</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <td><%= project.bip %></td>
+            <td><%= project.name %></td>
+            <td><%= project.ubication %></td>
+            <td><%= project.stage %></td>
+            <td>
+              <%= link_to project, class: 'btn btn-primary btn-sm' do %>
+                <% icon('fas', 'eye') %>
+              <% end %>
+              <%= link_to edit_project_path(project), class: 'btn btn-success btn-sm' do %>
+                <% icon('fas', 'edit') %>
+              <% end %>
+              <%= link_to project, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-danger btn-sm' do %>
+                <% icon('fas', 'trash-alt') %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

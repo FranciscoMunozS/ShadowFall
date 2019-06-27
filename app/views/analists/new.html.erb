@@ -1,5 +1,8 @@
-<h1>New Analist</h1>
-
-<%= render 'form', analist: @analist %>
-
-<%= link_to 'Back', analists_path %>
+<div class="card shadow mb-4 border-left-primary">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-primary">Nuevo analista</h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form', analist: @analist %>
+  </div>
+</div>

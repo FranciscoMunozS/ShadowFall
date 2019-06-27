@@ -1,5 +1,8 @@
-<h1>New Company</h1>
-
-<%= render 'form', company: @company %>
-
-<%= link_to 'Back', companies_path %>
+<div class="card shadow mb-4 border-left-info">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold text-info">Nueva compañia</h6>
+  </div>
+  <div class="card-body">
+    <%= render 'form', company: @company %>
+  </div>
+</div>
