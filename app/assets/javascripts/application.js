@@ -14,7 +14,6 @@
 //= require jquery3
 //= require popper
 //= require cocoon
-//= require custom
 //= require formater
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
@@ -25,4 +24,5 @@
 //= require toastr
 //= require inputmask
 //= require jquery.inputmask
+//= require custom
 //= require_tree .
