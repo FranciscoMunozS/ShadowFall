@@ -2,7 +2,15 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <%= f.association :employee, label: 'Empleado', include_blank: false %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.association :employee, label: 'AITO/AIF', include_blank: false %>
+      </div>
+      <div class="col-md-6">
+        <%= f.association :project, label: 'Proyecto', include_blank: false %>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-6">
         <%= f.input :start_date, label: 'Inicio', input_html: { class: 'datepicker' } %>
@@ -11,7 +19,7 @@
         <%= f.input :end_date, label: 'Termino', input_html: { class: 'datepicker' } %>
       </div>
     </div>
-    <%= f.input :resolution, label: 'Resolución' %>
+    <%= f.input :resolution, label: 'Resolución aprobación de contratos' %>
     <div class="row">
       <div class="col-md-6">
         <%= f.input :working_day, label: 'Jornada' %>

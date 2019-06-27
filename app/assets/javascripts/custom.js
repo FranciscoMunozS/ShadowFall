@@ -61,6 +61,13 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $("#period_project_id").select2({
+    theme: "bootstrap",
+    language: "es"
+  });
+});
+
 
 $(document).ready(function($) {
   "use strict"; // Start of use strict

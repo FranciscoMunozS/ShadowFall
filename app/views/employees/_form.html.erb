@@ -4,24 +4,34 @@
 
   <div class="form-inputs">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <%= f.input :rut, label: 'RUT', input_html: { id: 'rut' } %>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
+        <%= f.input :person_type, label: 'Tipo Persona' %>
+      </div>
+      <div class="col-md-4">
         <%= f.input :name, label: 'Nombre Completo' %>
       </div>
     </div>
     <%= f.input :amount, label: 'Monto Contratado del Profesional' %>
-    <%= f.input :technical_unit, label: 'Unidad Tecnica' %>
     <div class="row">
       <div class="col-md-6">
-        <%= f.input :profession, label: 'Profesión' %>
+        <%= f.input :fiscal_inspector, label: 'Inspector Fiscal' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :technical_unit, label: 'Unidad Tecnica' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :profession, label: 'Especialidad' %>
       </div>
       <div class="col-md-6">
         <%= f.input :charge, label: 'Cargo' %>
       </div>
     </div>
-    <%= f.input :fiscal_inspector, label: 'Inspector Fiscal' %>
+
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-success btn-sm' %>

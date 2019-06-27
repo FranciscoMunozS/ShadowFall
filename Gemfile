@@ -22,6 +22,7 @@ gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'rut_chileno'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
+gem 'enumerize', '~> 2.3', '>= 2.3.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

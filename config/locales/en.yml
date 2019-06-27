@@ -221,5 +221,5 @@ en:
         create: 'Agregar profesional'
         update: 'Actualizar datos profesional'
       period:
-        create: 'Crear periodo de prestación'
-        update: 'Actualizar periodo de prestación'
+        create: 'Crear contrato'
+        update: 'Actualizar contrato'
