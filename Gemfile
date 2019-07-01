@@ -23,6 +23,8 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'rut_chileno'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
 gem 'enumerize', '~> 2.3', '>= 2.3.1'
+gem 'dependent-fields-rails', '~> 0.4.2'
+gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

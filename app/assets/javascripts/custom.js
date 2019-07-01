@@ -15,9 +15,18 @@ $(document).ready(function(){
   }
 });
 
+$(document).ready(function() {
+  DependentFields.bind()
+});
+
 $(document).ready(function(){
   $("#rut").Rut();
+
+  $('#teams').on('cocoon:after-insert', function(e, insertedItem) {
+    $('#rut_team').Rut();
+  });
 });
+
 
 $(document).ready(function() {
   $("#dttb").dataTable({

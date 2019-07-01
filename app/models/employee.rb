@@ -3,7 +3,7 @@ class Employee < ApplicationRecord
   extend Enumerize
 
   has_many :periods
+  has_many :teams, inverse_of: :employee
 
-  enumerize :person_type, in: [:natural, :juridica]
-
+  accepts_nested_attributes_for :teams, reject_if: :all_blank, allow_destroy: true
 end

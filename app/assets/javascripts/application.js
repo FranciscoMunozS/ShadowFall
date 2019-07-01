@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery3
+//= require jquery
 //= require popper
 //= require cocoon
 //= require formater
@@ -24,5 +24,7 @@
 //= require toastr
 //= require inputmask
 //= require jquery.inputmask
+//= require underscore
+//= require dependent-fields
 //= require custom
 //= require_tree .

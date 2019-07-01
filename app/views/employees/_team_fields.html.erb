@@ -1,0 +1,23 @@
+<div class="nested-fields" id='teams'>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :name, label: 'Nombre' %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :rut, label: 'RUT', input_html: { id: 'rut_team' } %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :specialty, label: 'Especialidad' %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= link_to_remove_association f, class: 'btn btn-danger btn-sm' do %>
+        <% icon('fas', 'trash-alt', 'Quitar profesional') %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+</div>
