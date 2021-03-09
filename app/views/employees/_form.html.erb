@@ -27,7 +27,7 @@
             <%= f.simple_fields_for :teams do |team| %>
               <%= render 'team_fields', f: team %>
             <% end %>
-            <%= link_to_add_association 'Agregar profesional', f, :teams, class: 'btn btn-success btn-sm'  %>
+            <%= link_to_add_association 'Agregar profesional', f, :teams, class: 'btn btn-success btn-sm', id: 'add-team'  %>
           </div>
         </div>
       </div>

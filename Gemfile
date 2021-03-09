@@ -25,6 +25,10 @@ gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
 gem 'enumerize', '~> 2.3', '>= 2.3.1'
 gem 'dependent-fields-rails', '~> 0.4.2'
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
+gem 'rails_admin', '~> 2.1'
+gem 'cancancan', '~> 3.2', '>= 3.2.1'
+gem 'rails_admin-i18n'
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

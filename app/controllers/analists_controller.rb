@@ -1,30 +1,23 @@
 class AnalistsController < ApplicationController
   before_action :set_analist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
-  # GET /analists
-  # GET /analists.json
   def index
     @analists = Analist.all
   end
 
-  # GET /analists/1
-  # GET /analists/1.json
   def show
   end
 
-  # GET /analists/new
   def new
-    @analist = Analist.new
+    @analist = current_user.analists.build
   end
 
-  # GET /analists/1/edit
   def edit
   end
 
-  # POST /analists
-  # POST /analists.json
   def create
-    @analist = Analist.new(analist_params)
+    @analist = current_user.analists.build(analist_params)
 
     respond_to do |format|
       if @analist.save
@@ -37,8 +30,6 @@ class AnalistsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /analists/1
-  # PATCH/PUT /analists/1.json
   def update
     respond_to do |format|
       if @analist.update(analist_params)
@@ -51,8 +42,6 @@ class AnalistsController < ApplicationController
     end
   end
 
-  # DELETE /analists/1
-  # DELETE /analists/1.json
   def destroy
     @analist.destroy
     respond_to do |format|
@@ -62,13 +51,11 @@ class AnalistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_analist
       @analist = Analist.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def analist_params
-      params.require(:analist).permit(:name)
+      params.require(:analist).permit(:name, :user_id)
     end
 end

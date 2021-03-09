@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
-    @employee = Employee.new
+    @employee = current_user.employees.build
   end
 
   # GET /employees/1/edit
@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
-    @employee = Employee.new(employee_params)
+    @employee = current_user.employees.build(employee_params)
 
     respond_to do |format|
       if @employee.save
@@ -70,6 +70,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:name, :rut, :profession, :charge, :amount, :technical_unit, :fiscal_inspector, :person_type, :employee_type, teams_attributes: [:id, :name, :rut, :specialty, :_destroy])
+      params.require(:employee).permit(:name, :rut, :profession, :charge, :amount, :technical_unit, :fiscal_inspector, :person_type, :employee_type, :user_id, teams_attributes: [:id, :name, :rut, :specialty, :_destroy])
     end
 end

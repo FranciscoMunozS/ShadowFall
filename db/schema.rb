@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_184156) do
+ActiveRecord::Schema.define(version: 2021_03_05_153625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -40,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.datetime "updated_at", null: false
     t.string "person_type"
     t.boolean "employee_type"
+    t.integer "user_id"
   end
 
   create_table "periods", force: :cascade do |t|
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.datetime "updated_at", null: false
     t.integer "employee_id"
     t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "permanences", force: :cascade do |t|
@@ -63,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount"
+    t.integer "user_id"
     t.index ["period_id"], name: "index_permanences_on_period_id"
   end
 
@@ -74,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "stage"
+    t.integer "user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -83,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["employee_id"], name: "index_teams_on_employee_id"
   end
 
@@ -94,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_184156) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

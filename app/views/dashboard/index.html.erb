@@ -58,7 +58,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Analistas</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @companies.count %></div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= User.count %></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-industry fa-2x text-gray-300"></i>
@@ -68,4 +68,35 @@
     </div>
   </div>
 
+</div>
+
+<div class="card shadow mb-4 border-left-success">
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between font-weight-bold text-success">
+    Buscador AITO
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered text-center" id="dttb">
+      <thead>
+        <tr>
+          <th>RUT</th>
+          <th>Nombre Completo</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.rut %></td>
+            <td><%= employee.name %></td>
+            <td>
+              <%= link_to employee, class: 'btn btn-primary btn-sm' do %>
+                <% icon('fas', 'eye') %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

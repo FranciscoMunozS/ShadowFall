@@ -3,5 +3,7 @@ class Project < ApplicationRecord
 
   has_many :periods
 
+  belongs_to :user
+
   enumerize :stage, in: [ :ejecucion, :diseño, :prefactibilidad, :estudio, :programa ]
 end
