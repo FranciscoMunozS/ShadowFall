@@ -54,6 +54,9 @@ $(document).ready(function(){
     format: "dd/mm/yyyy",
     language: "es"
   });
+});
+
+$(document).ready(function(){
   $('#permanences').on('cocoon:after-insert', function(e, insertedItem) {
     $('.datepicker').datepicker({
       format: "dd/mm/yyyy",
@@ -61,7 +64,7 @@ $(document).ready(function(){
       startDate: "today",
     });
   });
-});
+})
 
 $(document).ready(function(){
   $("#period_employee_id").select2({

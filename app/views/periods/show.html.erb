@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="card">
-  <h2 class="card-header">Periodo Prestación</h2>
+  <p class="card-header">Periodo Prestación</p>
 
   <div class="card-body">
     <p><strong>Empleado:</strong></p>
@@ -25,24 +25,26 @@
     <hr>
     <p><strong>Cantidad días:</strong></p>
     <p><%= @period.quantity %></p>
-    <h3>Modificaciones</h3>
-    <hr>
-    <% @period.permanences.each do |permanence| %>
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Resolución: </strong></p>
-              <p><%= permanence.resolution %></p>
-            </div>
-            <div class="col-md-6">
-              <p><strong>Fecha termino: </strong></p>
-              <p><%= permanence.end_date %></p>
+    <% if @period.permanences.exists? %>
+      <h3>Modificaciones</h3>
+      <hr>
+      <% @period.permanences.each do |permanence| %>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Resolución: </strong></p>
+                <p><%= permanence.resolution %></p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Fecha termino: </strong></p>
+                <p><%= permanence.end_date.strftime("%d/%m/%Y") %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <br>
+        <br>
+      <% end %>
     <% end %>
   </div>
   <div class="card-footer">

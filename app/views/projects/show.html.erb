@@ -1,24 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="card">
+  <div class="card-header"><%= @project.name %></div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          <strong>Nombre proyecto:</strong>
+          <%= @project.name %>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          <strong>Codigo BIP:</strong>
+          <%= @project.bip %>
+        </p>
+      </div>
+    </div>
+    <hr>
+    <p>
+      <strong>Ubicación:</strong>
+      <%= @project.ubication %>
+    </p>
+    <hr>
+    <p>
+      <strong>Descripción:</strong>
+      <%= @project.description %>
+    </p>
 
-<p>
-  <strong>Ubication:</strong>
-  <%= @project.ubication %>
-</p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar registro', edit_project_path(@project), class: 'btn btn-primary btn-sm' %>
+    <%= link_to 'Volver', projects_path, class: 'btn btn-secondary btn-sm' %>
+  </div>
+</div>
 
-<p>
-  <strong>Bip:</strong>
-  <%= @project.bip %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

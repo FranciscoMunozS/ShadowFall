@@ -15,7 +15,7 @@ class PeriodsController < ApplicationController
 
   # GET /periods/new
   def new
-    @period = Period.new
+    @period = current_user.periods.build
   end
 
   # GET /periods/1/edit
@@ -25,7 +25,7 @@ class PeriodsController < ApplicationController
   # POST /periods
   # POST /periods.json
   def create
-    @period = Period.new(period_params)
+    @period = current_user.periods.build(period_params)
 
     respond_to do |format|
       if @period.save
@@ -70,6 +70,6 @@ class PeriodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def period_params
-      params.require(:period).permit(:start_date, :end_date, :resolution, :working_day, :quantity, :employee_id, :project_id, permanences_attributes: [:id, :name, :description, :end_date, :resolution, :amount, :_destroy])
+      params.require(:period).permit(:start_date, :end_date, :resolution, :working_day, :quantity, :employee_id, :project_id, :user_id, permanences_attributes: [:id, :name, :description, :end_date, :resolution, :amount, :_destroy])
     end
 end
