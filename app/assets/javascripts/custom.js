@@ -15,27 +15,6 @@ $(document).ready(function(){
   }
 });
 
-$(document).ready(function(){
-  // limits the number of categories
-  $('#teams').on('cocoon:after-insert', function() {
-    check_to_hide_or_show_add_link();
-  });
-
-  $('#teams').on('cocoon:after-remove', function() {
-    check_to_hide_or_show_add_link();
-  });
-
-  check_to_hide_or_show_add_link();
-
-  function check_to_hide_or_show_add_link() {
-    if ($('#teams .nested-fields').length == 1) {
-      $('#add-team').hide();
-    } else {
-      $('#add-team').show();
-    }
-  }
-});
-
 $(document).ready(function() {
   DependentFields.bind()
 });
